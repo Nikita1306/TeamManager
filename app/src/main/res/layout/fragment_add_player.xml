@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPlayerFragment">
+
+    <EditText
+        android:id="@+id/player_surname_add"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Введите фамилию игрока"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/player_name_add"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Введите имя игрока"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_surname_add" />
+
+    <Button
+        android:id="@+id/done_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Добавить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:visibility="gone"
+        android:text="Удалить"
+        app:layout_constraintBottom_toTopOf="@+id/done_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/choose_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/player_name_add">
+
+        <RadioButton
+            android:id="@+id/keeper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ВРТ" />
+
+        <RadioButton
+            android:id="@+id/def"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ЗАЩ" />
+
+        <RadioButton
+            android:id="@+id/half"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ПЛЗ" />
+
+        <RadioButton
+            android:id="@+id/striker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="НАП" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/goals_scored_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:text="Забито голов"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/choose_position" />
+    <TextView
+        android:id="@+id/goals_scored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toEndOf="@+id/goals_scored_text"
+        app:layout_constraintTop_toBottomOf="@+id/choose_position" />
+    <Button
+        android:id="@+id/plus_goals"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@+id/goals_scored"
+        app:layout_constraintTop_toBottomOf="@+id/choose_position" />
+
+
+
+    <Button
+        android:id="@+id/minus_goals"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/plus_goals"
+        app:layout_constraintTop_toBottomOf="@+id/choose_position" />
+    <TextView
+        android:id="@+id/assists_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:text="Голевых передач"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goals_scored_text" />
+    <TextView
+        android:id="@+id/assists"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toEndOf="@+id/assists_text"
+        app:layout_constraintTop_toBottomOf="@+id/goals_scored" />
+    <Button
+        android:id="@+id/plus_assists"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@+id/assists"
+        app:layout_constraintTop_toBottomOf="@+id/goals_scored_text" />
+
+
+
+    <Button
+        android:id="@+id/minus_assists"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/plus_assists"
+        app:layout_constraintTop_toBottomOf="@+id/goals_scored_text" />
+</androidx.constraintlayout.widget.ConstraintLayout>

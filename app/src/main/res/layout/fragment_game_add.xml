@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+    <EditText
+        android:id="@+id/opponent_add"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Введите название команды соперника"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/done_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Добавить"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/delete_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:visibility="gone"
+        android:text="Удалить"
+        app:layout_constraintBottom_toTopOf="@id/done_game_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/match_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Дата игры"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/opponent_add" />
+
+    <Button
+        android:id="@+id/date_pick_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Выбор даты"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/match_date_text" />
+
+    <TextView
+        android:id="@+id/your_goals_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:text="Ваши голы"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_pick_button" />
+
+    <TextView
+        android:id="@+id/opponent_goals_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:text="Голы соперника"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/your_goals_text" />
+    <TextView
+        android:id="@+id/opponent_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:text="0"
+        android:textSize="@dimen/text_size"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/opponent_goals_text"
+        app:layout_constraintTop_toBottomOf="@+id/your_goals" />
+    <TextView
+        android:id="@+id/your_goals"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintStart_toEndOf="@+id/your_goals_text"
+        app:layout_constraintTop_toBottomOf="@+id/date_pick_button" />
+
+    <Button
+        android:id="@+id/plus_your"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="30dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@+id/your_goals"
+        app:layout_constraintTop_toBottomOf="@+id/date_pick_button" />
+
+
+
+    <Button
+        android:id="@+id/minus_your"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/plus_your"
+        app:layout_constraintTop_toBottomOf="@+id/date_pick_button" />
+    <Button
+        android:id="@+id/plus_opponent"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="+"
+        app:layout_constraintStart_toEndOf="@+id/opponent_goals"
+        app:layout_constraintTop_toBottomOf="@+id/plus_your" />
+    <Button
+        android:id="@+id/minus_opponent"
+        android:layout_width="34dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@+id/plus_opponent"
+        app:layout_constraintTop_toBottomOf="@+id/minus_your" />
+</androidx.constraintlayout.widget.ConstraintLayout>
